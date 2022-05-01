@@ -42,10 +42,11 @@ jobs:
       - name: homebrew dependencies
         env:
           HOMEBREW_NO_AUTO_UPDATE: 1
+          HOMEBREW_NO_INSTALL_CLEANUP: 1
         run: |
           brew install autoconf automake libtool pkgconfig squashfs coreutils
           brew developer on
-          sudo brew install --cask macfuse
+          brew install --cask macfuse
         if: runner.os == 'macOS'
       - name: build
         run: |
