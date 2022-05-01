@@ -44,6 +44,7 @@ jobs:
           HOMEBREW_NO_AUTO_UPDATE: 1
         run: |
           brew install autoconf automake libtool pkgconfig squashfs coreutils
+          brew developer on
           sudo brew install --cask macfuse
         if: runner.os == 'macOS'
       - name: build
